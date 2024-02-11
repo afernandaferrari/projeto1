@@ -1,0 +1,64 @@
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Cliente {
+
+    private String nome;
+    private String cpf;
+    private LocalDate dataNascimento;
+    private String telefone;
+
+    // ... getters and setters
+
+}
+
+public class Main {
+
+    private static final Scanner scanner = new Scanner(System.in);
+    private static ArrayList<Cliente> clientes = new ArrayList<>();
+
+    public static void main(String[] args) {
+
+        int opcao;
+        do {
+            exibirMenu();
+            opcao = scanner.nextInt();
+
+            switch (opcao) {
+                case 1:
+                    cadastrarCliente();
+                    break;
+                case 2:
+                    listarClientes();
+                    break;
+                case 3:
+                    editarCliente();
+                    break;
+                case 4:
+                    excluirCliente();
+                    break;
+                case 0:
+                    System.out.println("Saindo do sistema...");
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+            }
+        } while (opcao != 0);
+    }
+
+    private static void exibirMenu() {
+        System.out.println("\n**Sistema de Cadastro de Clientes**");
+        System.out.println("-------------------------------------");
+        System.out.println("1. Cadastrar novo cliente");
+        System.out.println("2. Consultar lista de clientes");
+        System.out.println("3. Editar dados de um cliente");
+        System.out.println("4. Excluir um cliente");
+        System.out.println("0. Sair do sistema");
+        System.out.println("-------------------------------------");
+        System.out.print("Digite a opção desejada: ");
+    }
+
+    // ... métodos para cadastrar, listar, editar e excluir clientes
+
+}
